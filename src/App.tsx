@@ -4,7 +4,7 @@ import NavBar from './components/Navbar';
 import { Box, ThemeProvider } from '@mui/material';
 import { AllWalletsProvider } from './services/wallets/AllWalletsProvider';
 import AppRouter from './AppRouter';
-import colorBackground from './assets/colors.png';
+import backgroundSvg from './assets/background.svg';
 import { theme } from './theme';
 import "./App.css";
 
@@ -18,20 +18,18 @@ function App() {
             display: 'flex',
             flexDirection: 'column',
             minHeight: '100vh',
-            backgroundColor: '#222222',
-            backgroundImage: `url(${colorBackground})`,
+            backgroundColor: '#000000',
+            backgroundImage: `url(${backgroundSvg})`,
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed', // enables parallax effect
             backgroundPosition: 'center'
           }}
         >
           <header>
             <NavBar />
           </header>
-          <Box
-            flex={1}
-            p={3}
-          >
+          <Box flex={1} p={3}>
             <AppRouter />
           </Box>
           <Footer />
